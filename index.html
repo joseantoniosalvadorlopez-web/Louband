@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172033">
+<title>Hoja de Ruta</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+<header>
+  <div><small>HOJA DE RUTA</small><h1 id="dateTitle"></h1></div>
+  <button id="adminBtn">Administrador</button>
+</header>
+
+<section id="route"></section>
+
+<section class="card">
+  <div class="head"><h2>💬 Comentarios</h2><span id="count"></span></div>
+  <div id="comments"></div>
+  <form id="commentForm">
+    <input id="author" placeholder="Tu nombre" required>
+    <input id="comment" placeholder="Escribe un comentario..." required>
+    <button>Enviar</button>
+  </form>
+</section>
+<button id="calendarBtn" class="wide">📅 Calendario</button>
+</main>
+
+<dialog id="adminDialog">
+<form id="adminForm" class="modal">
+<div class="head"><h2>Editar hoja de ruta</h2><button type="button" id="closeAdmin">Cerrar</button></div>
+<label>Fecha<input type="date" id="date"></label>
+<label>Hora de salida<input type="time" id="departure"></label>
+<label>Base / lugar de salida<input id="base"></label>
+<label>Llegada aproximada<input type="time" id="arrival"></label>
+<label>Tipo de pase<select id="type"><option>Pase en parado</option><option>Pase a calles</option><option>Desfile</option></select></label>
+<label>Ubicación actuación<input id="venue"></label>
+<label>Hora actuación<input type="time" id="showTime"></label>
+
+<label class="check">¿Hay comida?<input type="checkbox" id="food"></label>
+<div id="foodBox" class="conditional"><label>Hora<input type="time" id="foodTime"></label><label>Restaurante / ubicación<input id="foodPlace"></label></div>
+
+<label class="check">¿Hay cena?<input type="checkbox" id="dinner"></label>
+<div id="dinnerBox" class="conditional"><label>Hora<input type="time" id="dinnerTime"></label><label>Restaurante / ubicación<input id="dinnerPlace"></label></div>
+
+<label class="check">¿Hay hotel?<input type="checkbox" id="hotel"></label>
+<div id="hotelBox" class="conditional"><label>Hotel<input id="hotelName"></label><label>Ubicación<input id="hotelPlace"></label></div>
+
+<label class="check">¿Hay segunda actuación?<input type="checkbox" id="second"></label>
+<div id="secondBox" class="conditional">
+<label>Hora<input type="time" id="secondTime"></label>
+<label>Tipo<select id="secondType"><option>Pase en parado</option><option>Pase a calles</option><option>Desfile</option></select></label>
+<label>Ubicación<input id="secondPlace"></label>
+</div>
+
+<label>Comentarios del administrador<textarea id="adminComments"></textarea></label>
+<button class="save">Guardar</button>
+</form>
+</dialog>
+
+<dialog id="calendarDialog">
+<div class="modal"><div class="head"><h2>Calendario</h2><button type="button" id="closeCalendar">Cerrar</button></div>
+<input type="month" id="month"><div id="calendarList"></div></div>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
